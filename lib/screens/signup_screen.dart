@@ -1,3 +1,4 @@
+import 'package:audiobook/screens/signin_screen.dart';
 import 'package:audiobook/widget/textfield_custom.dart';
 import 'package:flutter/material.dart';
 import '../constant.dart';
@@ -10,7 +11,7 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Padding(
         padding: EdgeInsets.all(size * 2),
         child: SingleChildScrollView(
@@ -40,10 +41,7 @@ class SignupScreen extends StatelessWidget {
                   child: Text(
                     "Sign Up",
                     textAlign: TextAlign.start,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
               ),
@@ -78,7 +76,7 @@ class SignupScreen extends StatelessWidget {
                   height: 56,
                   width: double.infinity,
                   decoration: ShapeDecoration(
-                    color: Color(0xFF4838D1),
+                    color: Theme.of(context).primaryColorLight,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
                   ),
@@ -86,7 +84,7 @@ class SignupScreen extends StatelessWidget {
                     child: Text(
                       "sign up",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.secondary,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -103,17 +101,24 @@ class SignupScreen extends StatelessWidget {
                     Text(
                       "Aarly do you have account?  ",
                       style: TextStyle(
-                        color: Color(0xFF2E2E5D),
+                        color: Theme.of(context).primaryColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignInScreen(),
+                          ),
+                        );
+                      },
                       child: Text(
                         "sign in",
                         style: TextStyle(
-                          color: Color(0xFFF67954),
+                          color: Theme.of(context).colorScheme.onPrimary,
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                         ),

@@ -1,5 +1,6 @@
-import 'package:audiobook/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens/main_scafold.dart';
+import 'theme/light.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,11 +9,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SignupScreen(),
+      debugShowCheckedModeBanner: false,
+      theme: light_theme,
+      home: MainScaffold(),
     );
   }
 }
